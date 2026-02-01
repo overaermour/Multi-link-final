@@ -1,0 +1,215 @@
+{
+  "home": {
+    "today": [
+      "08:10 AM: Morning Assembly (School Uniform)",
+      "09:30 AM: Mathematics - Algebra Review (School Uniform)",
+      "11:00 AM: Science Lab - Chemistry Experiment (School Uniform)",
+      "12:20 PM: Lunch Break",
+      "01:15 PM: CSEC Preparation Session (School Uniform)",
+      "02:45 PM: Physical Education - Cricket Practice (PE Clothes)",
+      "03:30 PM: Club Meetings (Club/School Shirt)",
+      "04:00 PM: After School Tutoring"
+    ]
+  },
+  "announcements": [
+    {
+      "tag": "Events",
+      "title": "Kite Flying Competition - April 17",
+      "body": "Join us for our Annual Kite Flying Competition on April 17 at 4:00 PM on the A.R.M.S. grounds. All kites must be handcrafted by the participant. Budget: $10,000 - $15,000. Every kite must successfully fly to qualify for judging. NO PRE-MADE KITES!",
+      "posted": "Apr 3, 2026",
+      "urgent": true
+    },
+    {
+      "tag": "Cultural",
+      "title": "Arrival Day Celebration",
+      "body": "Anna Regina Multilateral School will be celebrating Indian Arrival Day with a special programme highlighting the cultural heritage and contributions of Indo-Guyanese people. All students are encouraged to participate in cultural attire.",
+      "posted": "Apr 28, 2026",
+      "urgent": false
+    },
+    {
+      "tag": "Cultural",
+      "title": "Eid al-Adha Celebration",
+      "body": "A.R.M.S. invites all students to join in celebrating Eid al-Adha. The school community comes together to recognise and honour this important occasion for our Muslim students and staff.",
+      "posted": "Apr 25, 2026",
+      "urgent": false
+    },
+    {
+      "tag": "Academic",
+      "title": "CSEC Examinations - Preparation Reminder",
+      "body": "CSEC examinations are approaching. All Form 5 students should ensure their registration is complete and review their timetables. Extra tutoring sessions are available after school. See your class teacher for details.",
+      "posted": "Apr 20, 2026",
+      "urgent": true
+    },
+    {
+      "tag": "Sports",
+      "title": "Inter-School Cricket Tournament",
+      "body": "A.R.M.S. cricket team will be competing in the Essequibo Schools Sports Association inter-school cricket tournament. Show your school spirit and come support our team!",
+      "posted": "Apr 18, 2026",
+      "urgent": false
+    },
+    {
+      "tag": "General",
+      "title": "CXC CSEC School of the Year 2021-2022",
+      "body": "Anna Regina Multilateral School continues to celebrate its recognition as CXC CSEC School of the Year for 2021-2022. This achievement reflects the hard work of our students, teachers, and the entire school community. Let us build on this legacy!",
+      "posted": "Apr 15, 2026",
+      "urgent": false
+    }
+  ],
+  "events": [
+    {
+      "title": "Kite Flying Competition",
+      "meta": "Apr 17, 2026 | A.R.M.S. Grounds | 4:00 PM",
+      "attire": "Casual",
+      "type": "cultural",
+      "link": "kite-competition.html"
+    },
+    {
+      "title": "Inter-School Cricket Tournament",
+      "meta": "Apr 28, 2026 | A.R.M.S. Cricket Ground | 9:00 AM",
+      "attire": "PE Clothes",
+      "type": "sports"
+    },
+    {
+      "title": "Arrival Day Celebration",
+      "meta": "May 5, 2026 | A.R.M.S. Main Hall | 10:00 AM",
+      "attire": "Cultural Attire",
+      "type": "cultural",
+      "link": "arrival-day.html"
+    },
+    {
+      "title": "Sports Day",
+      "meta": "May 20, 2026 | A.R.M.S. Athletic Field | 8:00 AM",
+      "attire": "PE Clothes",
+      "type": "sports"
+    },
+    {
+      "title": "CSEC Examinations Begin",
+      "meta": "May 25, 2026 | Examination Centres | As Scheduled",
+      "attire": "School Uniform",
+      "type": "academic"
+    },
+    {
+      "title": "Eid al-Adha Celebration",
+      "meta": "Jun 7, 2026 | A.R.M.S. Campus | All Day",
+      "attire": "School Uniform",
+      "type": "cultural",
+      "link": "eid-al-adha.html"
+    },
+    {
+      "title": "Prize-Giving Ceremony",
+      "meta": "Jun 20, 2026 | A.R.M.S. Auditorium | 5:00 PM",
+      "attire": "Formal",
+      "type": "ceremony"
+    },
+    {
+      "title": "Mashramani Celebrations",
+      "meta": "Feb 23, 2026 | Anna Regina Town | 9:00 AM",
+      "attire": "Cultural Attire",
+      "type": "cultural"
+    }
+  ],
+  "clubs": [
+    {
+      "name": "Badminton Club",
+      "details": "Mon & Wed | Courts | 3:30 PM | A.R.M.S. Sports Dept.",
+      "attire": "PE Clothes",
+      "type": "sports"
+    },
+    {
+      "name": "Chess Club",
+      "details": "Fridays | Library | 3:45 PM | A.R.M.S. Academic Dept.",
+      "attire": "Casual",
+      "type": "academic"
+    },
+    {
+      "name": "Football Club",
+      "details": "Wednesdays | Athletic Field | 3:30 PM | A.R.M.S. Sports Dept.",
+      "attire": "PE Clothes",
+      "type": "sports"
+    },
+    {
+      "name": "Cricket Club",
+      "details": "Thursdays | Cricket Ground | 3:30 PM | A.R.M.S. Sports Dept.",
+      "attire": "PE Clothes",
+      "type": "sports"
+    },
+    {
+      "name": "Science Club",
+      "details": "Tuesdays | Science Lab | 3:30 PM | A.R.M.S. Science Dept.",
+      "attire": "School Uniform",
+      "type": "academic"
+    },
+    {
+      "name": "Drama Club",
+      "details": "Mondays | Auditorium | 3:30 PM | A.R.M.S. Arts Dept.",
+      "attire": "Casual",
+      "type": "creative"
+    }
+  ],
+  "calendarEvents": [
+    {
+      "date": "2026-02-23",
+      "title": "Mashramani Celebrations",
+      "attire": "Cultural Attire",
+      "location": "Anna Regina Town",
+      "time": "9:00 AM",
+      "type": "cultural"
+    },
+    {
+      "date": "2026-04-17",
+      "title": "Kite Flying Competition",
+      "attire": "Casual",
+      "location": "A.R.M.S. Grounds",
+      "time": "4:00 PM",
+      "type": "cultural"
+    },
+    {
+      "date": "2026-04-28",
+      "title": "Inter-School Cricket Tournament",
+      "attire": "PE Clothes",
+      "location": "A.R.M.S. Cricket Ground",
+      "time": "9:00 AM",
+      "type": "sports"
+    },
+    {
+      "date": "2026-05-05",
+      "title": "Arrival Day Celebration",
+      "attire": "Cultural Attire",
+      "location": "A.R.M.S. Main Hall",
+      "time": "10:00 AM",
+      "type": "cultural"
+    },
+    {
+      "date": "2026-05-20",
+      "title": "Sports Day",
+      "attire": "PE Clothes",
+      "location": "A.R.M.S. Athletic Field",
+      "time": "8:00 AM",
+      "type": "sports"
+    },
+    {
+      "date": "2026-05-25",
+      "title": "CSEC Examinations Begin",
+      "attire": "School Uniform",
+      "location": "Examination Centres",
+      "time": "As Scheduled",
+      "type": "academic"
+    },
+    {
+      "date": "2026-06-07",
+      "title": "Eid al-Adha Celebration",
+      "attire": "School Uniform",
+      "location": "A.R.M.S. Campus",
+      "time": "All Day",
+      "type": "cultural"
+    },
+    {
+      "date": "2026-06-20",
+      "title": "Prize-Giving Ceremony",
+      "attire": "Formal",
+      "location": "A.R.M.S. Auditorium",
+      "time": "5:00 PM",
+      "type": "ceremony"
+    }
+  ]
+}

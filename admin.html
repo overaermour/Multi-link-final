@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Link | Admin</title>
+  <link rel="icon" href="images/logo.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <section class="topbar">
+    <a class="brand" href="index.html">
+      <img src="images/logo.jpg" alt="Multi-Link logo">
+      <span>Multi-Link</span>
+    </a>
+    <div class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events-calendar.html">Events Calendar</a></li>
+        <li><a href="admin.html" class="active">Admin</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <main class="page-wrap admin-page">
+    <section class="hub-panel admin-login" id="login-panel">
+      <h2>Admin Sign In</h2>
+      <p class="panel-subtext">Use admin access to manage site JSON content.</p>
+      <form id="admin-login-form" class="admin-form">
+        <label>
+          Username
+          <input type="text" id="admin-user" required>
+        </label>
+        <label>
+          Password
+          <input type="password" id="admin-pass" required>
+        </label>
+        <button type="submit" class="btn primary">Sign In</button>
+        <p id="login-error" class="admin-error" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="hub-panel admin-editor hidden" id="editor-panel">
+      <div class="admin-head">
+        <h2>Site Data Editor</h2>
+        <button id="admin-logout" class="admin-link">Log Out</button>
+      </div>
+      <p class="panel-subtext">Edit JSON, then save. Changes are stored in your browser local storage.</p>
+      <textarea id="json-editor" class="json-editor" spellcheck="false"></textarea>
+      <div class="admin-actions">
+        <button id="save-json" class="btn primary" type="button">Save Changes</button>
+        <button id="reset-json" class="admin-link" type="button">Reset To File</button>
+      </div>
+      <p id="admin-status" class="panel-subtext" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="hub-data.js"></script>
+  <script>
+    const ADMIN_USER = "admin";
+    const ADMIN_PASS = "multilink2026";
+    const AUTH_KEY = "hubAdminAuth";
+
+    const loginPanel = document.getElementById("login-panel");
+    const editorPanel = document.getElementById("editor-panel");
+    const loginForm = document.getElementById("admin-login-form");
+    const userInput = document.getElementById("admin-user");
+    const passInput = document.getElementById("admin-pass");
+    const errorEl = document.getElementById("login-error");
+    const statusEl = document.getElementById("admin-status");
+    const jsonEditor = document.getElementById("json-editor");
+
+    function isAuthed() {
+      return localStorage.getItem(AUTH_KEY) === "1";
+    }
+
+    async function showEditor() {
+      loginPanel.classList.add("hidden");
+      editorPanel.classList.remove("hidden");
+      const data = await HubDataStore.load();
+      jsonEditor.value = JSON.stringify(data, null, 2);
+      statusEl.textContent = "Loaded current data.";
+    }
+
+    function showLogin() {
+      editorPanel.classList.add("hidden");
+      loginPanel.classList.remove("hidden");
+      statusEl.textContent = "";
+      errorEl.textContent = "";
+      userInput.value = "";
+      passInput.value = "";
+    }
+
+    loginForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (userInput.value === ADMIN_USER && passInput.value === ADMIN_PASS) {
+        localStorage.setItem(AUTH_KEY, "1");
+        await showEditor();
+      } else {
+        errorEl.textContent = "Invalid username or password.";
+      }
+    });
+
+    document.getElementById("save-json").addEventListener("click", () => {
+      try {
+        const parsed = JSON.parse(jsonEditor.value);
+        HubDataStore.save(parsed);
+        statusEl.textContent = "Saved. Refresh site pages to see updates.";
+      } catch (err) {
+        statusEl.textContent = "Invalid JSON. Fix formatting before saving.";
+      }
+    });
+
+    document.getElementById("reset-json").addEventListener("click", async () => {
+      HubDataStore.reset();
+      const fresh = await HubDataStore.load();
+      jsonEditor.value = JSON.stringify(fresh, null, 2);
+      statusEl.textContent = "Reset to file data/site-data.json.";
+    });
+
+    document.getElementById("admin-logout").addEventListener("click", () => {
+      localStorage.removeItem(AUTH_KEY);
+      showLogin();
+    });
+
+    if (isAuthed()) {
+      showEditor();
+    } else {
+      showLogin();
+    }
+  </script>
+  <a href="#top" class="to-top-btn" aria-label="Back to top">Top</a>
+</body>
+</html>
+
+
