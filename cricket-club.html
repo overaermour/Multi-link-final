@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Link | Cricket Club</title>
+  <link rel="icon" href="images/logo.jpg">
+  <link rel="stylesheet" href="style.css?v=3">
+  <style>
+    .history-article-wrap{background:#fff;}
+    .article-layout{display:grid;grid-template-columns:1fr 320px;gap:48px;max-width:1100px;margin:0 auto;padding:40px 24px 64px;}
+    .article-body{min-width:0;}
+    .article-intro-img{width:100%;height:380px;object-fit:cover;border-radius:14px;display:block;margin-bottom:32px;}
+    .article-lead{font-size:18px;color:#1a4d2e;font-weight:600;line-height:1.7;margin-bottom:24px;padding-bottom:24px;border-bottom:2px solid #f0f0e8;}
+    .article-body p{color:#374151;font-size:16px;line-height:1.85;margin-bottom:20px;}
+    .article-body h3{color:#1a4d2e;font-size:21px;font-weight:700;margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid #ffd700;display:inline-block;}
+    .club-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 28px;}
+    .club-info-card{background:#f4f0df;border-radius:12px;padding:16px 20px;border-top:3px solid #ffd700;}
+    .ci-label{font-size:11px;font-weight:700;letter-spacing:.1em;color:#6b7280;text-transform:uppercase;margin-bottom:6px;}
+    .ci-value{font-size:16px;font-weight:600;color:#1a4d2e;}
+    .learn-section{background:#f4f0df;border-radius:14px;padding:24px 28px;margin:8px 0 28px;}
+    .learn-label{font-size:11px;font-weight:700;letter-spacing:.12em;color:#6b7280;text-transform:uppercase;margin-bottom:18px;}
+    .learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;}
+    .learn-item{display:flex;align-items:center;gap:12px;font-size:16px;color:#374151;font-weight:500;}
+    .learn-check{width:22px;height:22px;border-radius:50%;background:#1a4d2e;color:#ffd700;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;}
+    .article-figure{margin:32px 0;}
+    .article-figure img{width:100%;border-radius:12px;object-fit:cover;display:block;}
+    .article-figure figcaption{font-size:13px;color:#6b7280;margin-top:10px;font-style:italic;line-height:1.5;padding-left:10px;border-left:3px solid #ffd700;}
+    .article-sidebar{position:sticky;top:90px;align-self:start;}
+    .share-section,.related-section{background:#fff;border:1px solid #e8e8e0;border-radius:14px;padding:20px 22px;margin-bottom:24px;}
+    .share-section h4,.related-section h4{color:#1a4d2e;font-size:17px;font-weight:700;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #eee;}
+    .share-icons{display:flex;gap:10px;}
+    .share-btn{width:42px;height:42px;border-radius:50%;background:#1a4d2e;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;font-weight:700;transition:background .2s;}
+    .share-btn:hover{background:#ffd700;color:#111;}
+    .related-card{display:block;text-decoration:none;margin-bottom:18px;border-radius:10px;overflow:hidden;border:1px solid #eee;}
+    .related-card img{width:100%;height:150px;object-fit:cover;display:block;}
+    .related-card-text{padding:12px 14px;}
+    .related-card-title{font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:4px;}
+    .related-card-sub{font-size:12px;color:#6b7280;line-height:1.4;}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;gap:24px;padding:28px 18px 48px;}.article-sidebar{position:static;}.learn-grid{grid-template-columns:1fr;}.club-info-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body id="top">
+  <section class="header">
+    <section class="topbar">
+      <a class="brand" href="index.html">
+        <img src="images/logo.jpg" alt="Multi-Link logo">
+        <span>Multi-Link</span>
+      </a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="events.html" class="dropdown-toggle active" aria-haspopup="true" aria-expanded="false">
+              Events <span class="chev" aria-hidden="true"></span>
+            </a>
+            <ul class="dropdown-menu" aria-label="Events submenu">
+              <li><a href="history.html">History</a></li>
+              <li><a href="clubs.html">Clubs</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="events-calendar.html">Events Calendar</a></li>
+              <li><a href="lessons.html">All Lessons</a></li>
+            </ul>
+          </li>
+          <li><a href="announcements.html">Announcements</a></li>
+        </ul>
+      </div>
+    </section>
+    <div class="hero-content">
+      <h1>Cricket Club</h1>
+      <p>Bat, bowl, and field. A.R.M.S. Cricket Club carries the school&rsquo;s proud regional championship tradition every Thursday.</p>
+      <a href="clubs.html" class="btn primary">Back to Clubs</a>
+    </div>
+  </section>
+
+  <main class="history-article-wrap">
+    <div class="article-layout">
+      <article class="article-body">
+        <img class="article-intro-img" src="images/cricket.jpg" alt="Cricket Club at A.R.M.S.">
+
+        <p class="article-lead">Cricket is at the heart of A.R.M.S. sporting culture. The Cricket Club has produced regional champions and continues to be one of the most competitive and celebrated clubs at the school. All students with a love for the game are welcome to join.</p>
+
+        <h3>Club Details</h3>
+        <div class="club-info-grid">
+          <div class="club-info-card">
+            <div class="ci-label">Meeting Day</div>
+            <div class="ci-value">Thursdays</div>
+          </div>
+          <div class="club-info-card">
+            <div class="ci-label">Time</div>
+            <div class="ci-value">3:30 PM</div>
+          </div>
+          <div class="club-info-card">
+            <div class="ci-label">Location</div>
+            <div class="ci-value">Cricket Ground</div>
+          </div>
+          <div class="club-info-card">
+            <div class="ci-label">Department</div>
+            <div class="ci-value">Sports Department</div>
+          </div>
+        </div>
+
+        <h3>What You'll Learn</h3>
+        <div class="learn-section">
+          <div class="learn-label">Skills &amp; Benefits</div>
+          <div class="learn-grid">
+            <div class="learn-item"><div class="learn-check">&#10003;</div>Batting Techniques</div>
+            <div class="learn-item"><div class="learn-check">&#10003;</div>Team Strategy</div>
+            <div class="learn-item"><div class="learn-check">&#10003;</div>Bowling Skills</div>
+            <div class="learn-item"><div class="learn-check">&#10003;</div>Fitness &amp; Stamina</div>
+            <div class="learn-item"><div class="learn-check">&#10003;</div>Fielding &amp; Reflexes</div>
+            <div class="learn-item"><div class="learn-check">&#10003;</div>Sportsmanship</div>
+          </div>
+        </div>
+
+        <h3>About the Club</h3>
+        <p>A.R.M.S. has a long and celebrated history in regional cricket, with the school's teams competing at the Essequibo Schools Sports Association level and beyond. The Cricket Club trains every Thursday on the Cricket Ground, covering batting drills, bowling techniques, and fielding practice under the supervision of the Sports Department.</p>
+
+        <figure class="article-figure">
+          <img src="images/cricket.jpg" alt="Cricket match at A.R.M.S.">
+          <figcaption>A.R.M.S. cricket players competing with the discipline and determination that has made the school a regional champion in the sport.</figcaption>
+        </figure>
+
+        <h3>How to Join</h3>
+        <p>The Cricket Club is open to all A.R.M.S. students. Come to the Cricket Ground on any Thursday at 3:30 PM in PE clothes. Whether you want to bat, bowl, or keep wicket, the club has a place for you. Students who demonstrate consistent skill and commitment are considered for inter-school tournament squads.</p>
+      </article>
+
+      <aside class="article-sidebar">
+        <div class="share-section">
+          <h4>Share</h4>
+          <div class="share-icons">
+            <a class="share-btn" href="#" aria-label="Share on Facebook"><img src="images/facebook.svg" alt="Facebook"></a>
+            <a class="share-btn" href="#" aria-label="Share on X"><img src="images/x.svg" alt="X"></a>
+            <a class="share-btn" href="#" aria-label="Share on LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+            <a class="share-btn" href="#" aria-label="Share on WhatsApp"><img src="images/whatsapp.svg" alt="WhatsApp"></a>
+          </div>
+        </div>
+        <div class="related-section">
+          <h4>Other Clubs</h4>
+          <a class="related-card" href="football-club.html">
+            <img src="images/football.jpg" alt="Football Club">
+            <div class="related-card-text">
+              <div class="related-card-title">Football Club</div>
+              <div class="related-card-sub">Wednesdays at 3:30 PM on the Athletic Field.</div>
+            </div>
+          </a>
+          <a class="related-card" href="badminton-club.html">
+            <img src="images/badminton.jpg" alt="Badminton Club">
+            <div class="related-card-text">
+              <div class="related-card-title">Badminton Club</div>
+              <div class="related-card-sub">Mondays &amp; Wednesdays at 3:30 PM on the Courts.</div>
+            </div>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-expanded">
+      <div class="footer-col">
+        <h4>Anna Regina Multilateral</h4>
+        <p>Anna Regina, Essequibo Coast<br>Region 2, Guyana</p>
+        <p style="margin-top:10px;color:#ffd700;font-weight:700;">CXC CSEC School of the Year<br>2021&ndash;2022</p>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="footer-social-btn" aria-label="Facebook"><img src="images/facebook.svg" alt="Facebook"></a>
+        <a href="#" class="footer-social-btn" aria-label="Instagram"><img src="images/instagram.svg" alt="Instagram"></a>
+        <a href="#" class="footer-social-btn" aria-label="WhatsApp"><img src="images/whatsapp.svg" alt="WhatsApp"></a>
+        <a href="#" class="footer-social-btn" aria-label="YouTube"><img src="images/youtube.svg" alt="YouTube"></a>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="events.html">Events</a>
+        <a href="clubs.html">Clubs</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="announcements.html">Announcements</a>
+        <a href="history.html">History</a>
+      </div>
+      <div class="footer-col">
+        <h4>Student Services</h4>
+        <a href="events-calendar.html">Events Calendar</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="admin.html">Admin Portal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Anna Regina Multilateral School. All rights reserved.</p>
+    </div>
+  </footer>
+  <a href="#top" class="to-top-btn" aria-label="Back to top">Top</a>
+  <script>
+    // shrink the topbar on scroll
+    let bar = document.querySelector(".topbar");
+    if (bar) {
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 60) bar.classList.add("scrolled");
+        else bar.classList.remove("scrolled");
+      });
+    }
+  </script>
+</body>
+</html>
