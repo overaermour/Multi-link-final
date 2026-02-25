@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Link | Events Calendar</title>
+  <link rel="icon" href="images/logo.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <section class="header">
+    <section class="topbar">
+      <a class="brand" href="index.html">
+        <img src="images/logo.jpg" alt="Multi-Link logo">
+        <span>Multi-Link</span>
+      </a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="events.html" class="dropdown-toggle active" aria-haspopup="true" aria-expanded="false">
+              Events <span class="chev" aria-hidden="true"></span>
+            </a>
+            <ul class="dropdown-menu" aria-label="Events submenu">
+              <li><a href="history.html">History</a></li>
+              <li><a href="clubs.html">Clubs</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="events-calendar.html">Events Calendar</a></li>
+              <li><a href="lessons.html">All Lessons</a></li>
+            </ul>
+          </li>
+          <li><a href="announcements.html">Announcements</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="hero-content">
+      <h1>Events Calendar</h1>
+      <p>View A.R.M.S. academic and extracurricular events month by month.</p>
+      <a href="index.html" class="btn primary">Back to Home</a>
+    </div>
+  </section>
+
+  <main class="calendar-page single-column">
+    <section class="calendar-shell interactive-calendar" aria-label="Events calendar">
+      <div class="calendar-toolbar">
+        <div class="calendar-nav">
+          <button type="button" id="cal-prev" aria-label="Previous month">&#8249;</button>
+          <button type="button" id="cal-next" aria-label="Next month">&#8250;</button>
+          <button type="button" id="cal-today">Today</button>
+        </div>
+        <h3 id="cal-title">Month YYYY</h3>
+        <div class="calendar-view">Month View</div>
+      </div>
+      <div class="calendar-grid" id="calendar-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-expanded">
+      <div class="footer-col">
+        <h4>Anna Regina Multilateral</h4>
+        <p>Anna Regina, Essequibo Coast<br>Region 2, Guyana</p>
+        <p style="margin-top:10px;color:#ffd700;font-weight:700;">CXC CSEC School of the Year<br>2021&ndash;2022</p>
+      </div>
+        <div class="footer-social">
+          <a href="#" class="footer-social-btn" aria-label="Facebook"><img src="images/facebook.svg" alt="Facebook"></a>
+          <a href="#" class="footer-social-btn" aria-label="Instagram"><img src="images/instagram.svg" alt="Instagram"></a>
+          <a href="#" class="footer-social-btn" aria-label="WhatsApp"><img src="images/whatsapp.svg" alt="WhatsApp"></a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube"><img src="images/youtube.svg" alt="YouTube"></a>
+        </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="events.html">Events</a>
+        <a href="clubs.html">Clubs</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="announcements.html">Announcements</a>
+        <a href="history.html">History</a>
+      </div>
+      <div class="footer-col">
+        <h4>Student Services</h4>
+        <a href="events-calendar.html">Events Calendar</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="admin.html">Admin Portal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Anna Regina Multilateral School. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="hub-data.js"></script>
+  <script>
+    let events = [];
+    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const titleEl = document.getElementById("cal-title");
+    const gridEl = document.getElementById("calendar-grid");
+    const prevBtn = document.getElementById("cal-prev");
+    const nextBtn = document.getElementById("cal-next");
+    const todayBtn = document.getElementById("cal-today");
+
+    let currentMonth = new Date(2026, 4, 1);
+
+    function sameDay(date, base) {
+      return date.getFullYear() === base.getFullYear() &&
+        date.getMonth() === base.getMonth() &&
+        date.getDate() === base.getDate();
+    }
+
+    function dayEvents(date) {
+      const key = date.toISOString().slice(0, 10);
+      return events.filter((event) => event.date === key);
+    }
+
+    function renderCalendar() {
+      titleEl.textContent = currentMonth.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+      gridEl.innerHTML = "";
+
+      dayNames.forEach((name) => {
+        const head = document.createElement("div");
+        head.className = "calendar-head";
+        head.textContent = name;
+        gridEl.appendChild(head);
+      });
+
+      const year = currentMonth.getFullYear();
+      const month = currentMonth.getMonth();
+      const firstDay = new Date(year, month, 1);
+      const startOffset = firstDay.getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      for (let i = 0; i < startOffset; i += 1) {
+        const blank = document.createElement("article");
+        blank.className = "calendar-day muted";
+        gridEl.appendChild(blank);
+      }
+
+      for (let day = 1; day <= daysInMonth; day += 1) {
+        const date = new Date(year, month, day);
+        const cell = document.createElement("article");
+        cell.className = "calendar-day";
+
+        const num = document.createElement("span");
+        num.className = "day-num";
+        num.textContent = String(day);
+        cell.appendChild(num);
+
+        dayEvents(date).forEach((event) => {
+          const pill = document.createElement("p");
+          pill.className = `event-pill ${event.type}`;
+          pill.textContent = event.title;
+
+          const tooltip = document.createElement("span");
+          tooltip.className = "event-tooltip";
+          tooltip.textContent = `${event.time} | ${event.location} | ${event.attire}`;
+
+          pill.appendChild(tooltip);
+          cell.appendChild(pill);
+        });
+
+        if (sameDay(date, new Date())) {
+          cell.classList.add("today-cell");
+        }
+
+        gridEl.appendChild(cell);
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1);
+      renderCalendar();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1);
+      renderCalendar();
+    });
+
+    todayBtn.addEventListener("click", () => {
+      const now = new Date();
+      currentMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+      renderCalendar();
+    });
+
+    HubDataStore.load().then((data) => {
+      events = Array.isArray(data.calendarEvents) ? data.calendarEvents : [];
+      renderCalendar();
+    });
+  </script>
+  <a href="#top" class="to-top-btn" aria-label="Back to top">Top</a>
+  <script>
+    /* topbar shrink */
+    var topbar = document.querySelector(".topbar");
+    if (topbar) {
+      window.addEventListener("scroll", function() {
+        topbar.classList.toggle("scrolled", window.scrollY > 60);
+      }, { passive: true });
+    }
+
+    // fade in on scroll
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("revealed");
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll(".reveal").forEach(function(el) { revealObserver.observe(el); });
+  </script>
+</body>
+</html>
