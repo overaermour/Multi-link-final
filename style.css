@@ -2854,3 +2854,12 @@ a.btn-ghost {
   background:transparent;
 }
 a.btn-ghost:hover { background:#1a4d2e; color:#ffd700; }
+
+/* a11y -- visible focus ring for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #ffd700;
+  outline-offset: 2px;
+}
